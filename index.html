@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HBD Mama</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         DECORATIVE FLOWERS
+    ========================== -->
+
+    <div class="flower flower-1">🌸</div>
+    <div class="flower flower-2">🌷</div>
+    <div class="flower flower-4">🌸</div>
+    <div class="flower flower-6">🌼</div>
+
+
+    <!-- =========================
+         MUSIC
+    ========================== -->
+
+    <!-- INI TEMPAT MUSIK -->
+    <audio id="birthdayMusic" loop>
+        <source src="music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- =========================
+         OPENING
+    ========================== -->
+
+    <section id="opening" class="screen">
+
+        <div class="opening-content">
+
+            <!-- <p class="tiny-text">
+                A little surprise for
+            </p> -->
+
+            <h1>
+                Happy Birthday
+                <span>Mom</span> 
+            </h1>
+
+            <p class="opening-text">
+                Wish You All The Best.
+            </p>
+
+
+            <!-- ENVELOPE -->
+
+            <div id="envelope" class="envelope">
+
+                <div class="envelope-back"></div>
+
+                <div class="letter">
+                    <span>❤️</span>
+                </div>
+
+                <div class="envelope-front"></div>
+
+                <div class="envelope-flap"></div>
+
+            </div>
+
+
+            <button id="openButton">
+                Open
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main id="mainContent" class="hidden">
+
+
+        <!-- HERO -->
+
+        <section class="hero-section">
+
+            <p class="eyebrow">
+                3 October 2026
+            </p>
+
+            <h2>
+                Happy Birthday,<br>
+                Mom
+            </h2>
+
+            <p>
+                Semoga sehat selalu dan panjang umur.
+            </p>
+
+
+            <button id="musicButton" class="music-button">
+                🎵 Play Music
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             PHOTO GALLERY
+        ========================== -->
+
+        <section class="gallery-section">
+
+            <p class="eyebrow">
+                memories
+            </p>
+
+            <h2>
+                Foto Mama
+            </h2>
+
+            <!-- <p class="section-description">
+                Beberapa foto yang mengingatkanku
+                pada momen-momen bersama Mama.
+            </p> -->
+
+
+            <div class="gallery">
+
+
+                <!-- INI TEMPAT FOTO 1 -->
+
+                <div class="photo photo-1" data-photo="0">
+
+                    <img
+                        src="images/mama1.jpg"
+                        alt="Foto Mama 1"
+                    >
+
+                    <div class="photo-number">
+                        01
+                    </div>
+
+                </div>
+
+
+                <!-- INI TEMPAT FOTO 2 -->
+
+                <div class="photo photo-2" data-photo="1">
+
+                    <img
+                        src="images/mama2.jpg"
+                        alt="Foto Mama 2"
+                    >
+
+                    <div class="photo-number">
+                        02
+                    </div>
+
+                </div>
+
+
+                <!-- INI TEMPAT FOTO 3 -->
+
+                <div class="photo photo-3" data-photo="2">
+
+                    <img
+                        src="images/mama3.jpg"
+                        alt="Foto Mama 3"
+                    >
+
+                    <div class="photo-number">
+                        03
+                    </div>
+
+                </div>
+
+
+                <!-- INI TEMPAT FOTO 4 -->
+
+                <div class="photo photo-4" data-photo="3">
+
+                    <img
+                        src="images/mama4.jpg"
+                        alt="Foto Mama 4"
+                    >
+
+                    <div class="photo-number">
+                        04
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- <p class="tap-text">
+                Tap a photo to see it closer ❤️
+            </p> -->
+
+        </section>
+
+
+        <!-- =========================
+             LETTER
+        ========================== -->
+
+        <section class="letter-section">
+
+            <div class="letter-card">
+
+                <!-- <div class="flower-icon">
+                    🌷
+                </div> -->
+
+                <p class="eyebrow">
+                    A letter for mom
+                </p>
+
+                <!-- <h2>
+                    For Mom
+                </h2> -->
+
+
+                <div class="letter-text">
+
+                    <p>
+                        Happy Birthday Mom!
+                    </p>
+
+                    <p>
+                        Thank you for all the care, patience, and sacrifices
+                        you have made over the years.
+                    </p>
+
+                    <p>
+                        Thank you for always being there,
+                        always supporting me, and always trying
+                        to give me the best.
+                    </p>
+
+                    <p>
+                        I hope Mom is always given good health,
+                        happiness, a long life, and
+                        god bless you always.
+                    </p>
+
+                </div>
+
+
+                <div class="signature">
+
+                    <span>From Davin</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL
+        ========================== -->
+
+        <section class="final-section">
+
+            <!-- <div class="final-flower">
+                🌸
+            </div>
+
+            <h2>
+                I Love You, Mama ❤️
+            </h2>
+
+            <p>
+                Happy Birthday once again!
+            </p> -->
+
+            <button id="surpriseButton">
+                3 October 2026
+            </button>
+
+        </section>
+
+<!-- 
+        <footer>
+            Made with ❤️ specially for Mama
+        </footer> -->
+
+    </main>
+
+
+    <!-- =========================
+         PHOTO MODAL
+    ========================== -->
+
+    <div id="photoModal" class="modal">
+
+        <button id="closeModal" class="close-modal">
+            ×
+        </button>
+
+        <button id="previousPhoto" class="photo-arrow left">
+            ‹
+        </button>
+
+        <img id="modalImage" src="" alt="Foto Mama">
+
+        <button id="nextPhoto" class="photo-arrow right">
+            ›
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         SURPRISE MODAL
+    ========================== -->
+
+    <div id="surpriseModal" class="surprise-modal">
+
+        <div class="surprise-card">
+
+                <!-- <div class="big-heart">
+                    ❤️
+                </div> -->
+
+            <h2>
+                Thank You Mom
+            </h2>
+
+            <!-- <p>
+                Tidak peduli berapa umurku nanti,
+                aku akan selalu menjadi anak Mama.
+            </p> -->
+
+            <button id="closeSurprise">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

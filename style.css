@@ -1,0 +1,887 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            #fff7f8,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #ffe7ed,
+            transparent 35%
+        ),
+        #fff3f5;
+
+    color: #4c3036;
+
+    overflow-x: hidden;
+}
+
+
+/* =================================
+   FLOWERS
+================================= */
+
+.flower {
+    position: fixed;
+
+    font-size: 30px;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: floatingFlower 5s ease-in-out infinite;
+}
+
+.flower-1 {
+    top: 8%;
+    left: 5%;
+}
+
+.flower-2 {
+    top: 20%;
+    right: 6%;
+    animation-delay: 1s;
+}
+
+.flower-3 {
+    top: 55%;
+    left: 3%;
+    animation-delay: 2s;
+}
+
+.flower-4 {
+    bottom: 10%;
+    right: 5%;
+    animation-delay: 1.5s;
+}
+
+.flower-5 {
+    top: 70%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.flower-6 {
+    bottom: 30%;
+    left: 8%;
+    animation-delay: 2.5s;
+}
+
+@keyframes floatingFlower {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(8deg);
+    }
+}
+
+
+/* =================================
+   GENERAL
+================================= */
+
+.hidden {
+    display: none !important;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* =================================
+   OPENING
+================================= */
+
+.screen {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 30px;
+}
+
+.opening-content {
+    max-width: 700px;
+}
+
+.tiny-text {
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    color: #b47783;
+
+    margin-bottom: 20px;
+}
+
+.opening-content h1 {
+    font-size: clamp(45px, 10vw, 85px);
+
+    line-height: 0.95;
+
+    margin-bottom: 25px;
+}
+
+.opening-content h1 span {
+    color: #c85d75;
+
+    font-style: italic;
+}
+
+.opening-text {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #87666d;
+}
+
+
+/* =================================
+   ENVELOPE
+================================= */
+
+.envelope {
+    width: 190px;
+    height: 130px;
+
+    margin: 45px auto 25px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+.envelope:hover {
+    transform: translateY(-8px);
+}
+
+.envelope-back {
+    position: absolute;
+
+    inset: 0;
+
+    background: #eaa5b5;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 35px rgba(120, 50, 70, 0.2);
+}
+
+.envelope-front {
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 95px solid transparent;
+    border-right: 95px solid transparent;
+
+    border-bottom: 70px solid #d9879b;
+
+    z-index: 3;
+}
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 95px solid transparent;
+    border-right: 95px solid transparent;
+
+    border-top: 70px solid #f0b8c6;
+
+    transform-origin: top;
+
+    z-index: 4;
+
+    transition: 0.8s;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.letter {
+    position: absolute;
+
+    width: 150px;
+    height: 100px;
+
+    background: white;
+
+    left: 20px;
+    top: 10px;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 3px;
+
+    transition: 0.8s;
+}
+
+.envelope.open .letter {
+    transform: translateY(-70px);
+}
+
+.letter span {
+    font-size: 28px;
+}
+
+
+/* =================================
+   OPEN BUTTON
+================================= */
+
+#openButton {
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #c85d75;
+
+    color: white;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 12px 30px rgba(200, 93, 117, 0.25);
+
+    transition: 0.3s;
+}
+
+#openButton:hover {
+    transform: translateY(-3px);
+
+    background: #b84d66;
+}
+
+
+/* =================================
+   MAIN
+================================= */
+
+#mainContent {
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero-section {
+    min-height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 25px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    color: #c85d75;
+
+    margin-bottom: 15px;
+}
+
+.hero-section h2 {
+    font-size: clamp(48px, 9vw, 85px);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+.hero-section > p:not(.eyebrow) {
+    max-width: 500px;
+
+    line-height: 1.7;
+
+    font-size: 17px;
+
+    color: #80666c;
+}
+
+
+/* =================================
+   MUSIC
+================================= */
+
+.music-button {
+    margin-top: 35px;
+
+    padding: 12px 22px;
+
+    border: 1px solid #e7b7c1;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    color: #a24d62;
+
+    transition: 0.3s;
+}
+
+.music-button:hover {
+    transform: translateY(-3px);
+
+    background: white;
+}
+
+
+/* =================================
+   GALLERY
+================================= */
+
+.gallery-section {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 100px 25px;
+
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.section-description {
+    color: #856d72;
+
+    line-height: 1.7;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+
+    max-width: 750px;
+
+    margin: 50px auto 25px;
+}
+
+.photo {
+    position: relative;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    background: #f4d9df;
+
+    box-shadow:
+        0 15px 35px rgba(100, 50, 65, 0.12);
+
+    transition: 0.5s;
+}
+
+.photo:nth-child(1) {
+    transform: rotate(-2deg);
+}
+
+.photo:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.photo:nth-child(3) {
+    transform: rotate(1deg);
+}
+
+.photo:nth-child(4) {
+    transform: rotate(-2deg);
+}
+
+.photo:hover {
+    transform: rotate(0deg) scale(1.04);
+
+    z-index: 5;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.photo:hover img {
+    transform: scale(1.08);
+}
+
+.photo-number {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+
+    color: #a04c61;
+}
+
+.tap-text {
+    font-size: 13px;
+
+    color: #a58a90;
+
+    font-style: italic;
+}
+
+
+/* =================================
+   LETTER
+================================= */
+
+.letter-section {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 100px 25px;
+}
+
+.letter-card {
+    background: rgba(255, 255, 255, 0.8);
+
+    padding: 60px 55px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 25px 70px rgba(100, 50, 65, 0.1);
+
+    text-align: center;
+}
+
+.flower-icon {
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.letter-card h2 {
+    font-size: 42px;
+
+    margin-bottom: 40px;
+}
+
+.letter-text {
+    line-height: 1.9;
+
+    color: #685057;
+
+    font-size: 17px;
+}
+
+.letter-text p {
+    margin-bottom: 22px;
+}
+
+.signature {
+    margin-top: 45px;
+
+    color: #a46a78;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+.signature span {
+    font-size: 20px;
+}
+
+
+/* =================================
+   FINAL
+================================= */
+
+.final-section {
+    text-align: center;
+
+    padding: 130px 25px;
+}
+
+.final-flower {
+    font-size: 70px;
+
+    animation: floatingFlower 3s infinite;
+}
+
+.final-section h2 {
+    font-size: clamp(38px, 8vw, 65px);
+
+    margin: 20px 0;
+}
+
+.final-section p {
+    color: #80666c;
+
+    margin-bottom: 35px;
+}
+
+#surpriseButton {
+    padding: 15px 28px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #c85d75;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #a98a91;
+
+    font-size: 13px;
+}
+
+
+/* =================================
+   PHOTO MODAL
+================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(35, 15, 23, 0.94);
+
+    z-index: 100;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal img {
+    max-width: 80%;
+
+    max-height: 80vh;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    background: none;
+
+    color: white;
+
+    border: none;
+
+    font-size: 45px;
+}
+
+.photo-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 35px;
+}
+
+.photo-arrow.left {
+    left: 25px;
+}
+
+.photo-arrow.right {
+    right: 25px;
+}
+
+
+/* =================================
+   SURPRISE MODAL
+================================= */
+
+.surprise-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 200;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(40, 15, 25, 0.8);
+
+    padding: 25px;
+}
+
+.surprise-modal.active {
+    display: flex;
+}
+
+.surprise-card {
+    background: #fff8fa;
+
+    max-width: 450px;
+
+    width: 100%;
+
+    padding: 50px 35px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    animation: popup 0.5s ease;
+}
+
+.big-heart {
+    font-size: 65px;
+
+    animation: heartbeat 1s infinite;
+}
+
+.surprise-card h2 {
+    font-size: 32px;
+
+    margin: 20px 0;
+}
+
+.surprise-card p {
+    line-height: 1.8;
+
+    color: #755960;
+
+    margin-bottom: 30px;
+}
+
+#closeSurprise {
+    border: none;
+
+    border-radius: 50px;
+
+    padding: 12px 25px;
+
+    background: #c85d75;
+
+    color: white;
+}
+
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes popup {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .opening-content h1 {
+        font-size: 52px;
+    }
+
+    .hero-section {
+        min-height: 80vh;
+    }
+
+    .hero-section h2 {
+        font-size: 52px;
+    }
+
+    .gallery {
+        gap: 12px;
+    }
+
+    .gallery-section h2 {
+        font-size: 32px;
+    }
+
+    .letter-card {
+        padding: 40px 25px;
+    }
+
+    .letter-card h2 {
+        font-size: 32px;
+    }
+
+    .letter-text {
+        font-size: 16px;
+    }
+
+    .modal img {
+        max-width: 88%;
+    }
+
+    .photo-arrow.left {
+        left: 8px;
+    }
+
+    .photo-arrow.right {
+        right: 8px;
+    }
+
+    .flower {
+        font-size: 22px;
+    }
+}
